@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh; /* Ocupa 100% da altura da tela */
+  overflow: hidden;
+}
+
+.info-container {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  align-items: center; /* Centraliza o conteúdo */
+  gap: 20px; /* Espaçamento entre o título, texto e o botão */
+}
+
+h1, p {
+  font-size: 3rem;
+  animation: fadeIn 2s ease-in-out;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: #fff;
+  color: black;
+  font-size: 1rem;
+  padding: 10px 180px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #00bfa5;
+  transform: scale(1.05);
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

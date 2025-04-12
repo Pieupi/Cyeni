@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fofocas - Central Fênix</title>
+  <link rel="stylesheet" href="fofocas.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="fade-in">Últimas Fofocas</h1>
+    <div id="noticias" class="noticias">
+      <!-- As fofocas serão carregadas aqui -->
+    </div>
+  </div>
+
+  <script>
+    // Função para carregar as fofocas a partir do arquivo JSON
+    fetch('fofocas.json')
+      .then(response => response.json())
+      .then(data => {
+        const noticiasContainer = document.getElementById('noticias');
+        
+        data.forEach(noticia => {
+          const noticiaElement = document.createElement('div');
+          noticiaElement.classList.add('noticia');
+
+          noticiaElement.innerHTML = `
+            <h2>${noticia.titulo}</h2>
+            <p class="data">${noticia.data}</p>
+            <p>${noticia.conteudo}</p>
+          `;
+
+          noticiasContainer.appendChild(noticiaElement);
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar as fofocas:', error);
+      });
+  </script>
+</body>
+</html>
